@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import BOTH, CENTER, RIGHT, TOP, ttk
 from tkinter import filedialog as fd
 from PIL import Image, ImageTk
-from actions import Actions
+from src.actions import Actions
 from src.image_processor import ImageProcessor, process_image
 from src.controls import Controls
 
