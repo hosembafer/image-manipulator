@@ -1,0 +1,7 @@
+# System
+.DS_Store
+
+# Python
+/dist
+/build
+__pycache__
