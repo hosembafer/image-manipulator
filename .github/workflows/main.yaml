@@ -1,0 +1,52 @@
+name: Package Application with Pyinstaller
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # build:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Package Application
+  #       uses: JackMcKew/pyinstaller-action-windows@main
+  #       with:
+  #         path: ./
+
+  #     - uses: actions/upload-artifact@v2
+  #       with:
+  #         name: Image Manipulator.app
+  #         path: dist/windows
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["windows-latest", "ubuntu-latest", "macos-latest"]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.13
+
+      - name: Install pyinstaller
+        run: |
+          pip3 install pyinstaller
+          pip3 uninstall PIL
+
+      - name: Package Application
+        run: pyinstaller -n "Image Manipulator" --clean --onefile --noconsole image_manipulator.py
+
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: dist/*
+          name: app

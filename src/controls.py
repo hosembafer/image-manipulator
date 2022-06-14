@@ -55,10 +55,9 @@ class Controls:
         )
         self.border_width_entry.pack(side=LEFT)
         self.border_color_var = tk.StringVar()
-        self.color_icon = tk.PhotoImage(file='./assets/color-wheel.png', width=24, height=24)
         self.border_color_entry = tk.Button(
             master=border_entry_frame,
-            image=self.color_icon,
+            text="Color",
             command=self.handle_border_color,
         )
         self.border_color_entry.pack(side=RIGHT)
