@@ -1,6 +1,6 @@
 # Image Manipulator
 
-Image manipulation program for bulk resizing, cropping and filtering the group of images at once
+Image manipulation program for bulk resizing, cropping and filtering the group of images.
 
 ## Features
 - Resizing
