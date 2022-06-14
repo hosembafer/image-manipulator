@@ -9,3 +9,7 @@ Image manipulation program for bulk resizing, cropping and filtering the group o
 - Invert and Grayscale
 - Flip and Mirror
 - Border expansion
+
+## Screenshots
+
+<img src="/screenshots/screenshot.png" alt="Image manupulator screenshot" width="720" />
